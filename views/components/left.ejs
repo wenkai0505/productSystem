@@ -1,0 +1,56 @@
+<div class="left leftStyle">
+    <div class="menu menuStyle">
+        <div class="info">
+            <p>帳號：<%= user.username %></p>
+            <p>信箱：<%= user.email %></p>
+        </div>
+        <div class="list">
+            <div class="liTitle">商品管理</div>
+            <a href="/product" class="subList">商品列表</a>
+            <a href="/product/add" class="subList">新增商品</a>
+        </div>
+        <div class="list">
+            <div class="liTitle">用戶管理</div>
+            <a href="" class="subList">用戶列表</a>
+            <a href="" class="subList">新增用戶</a>
+        </div>
+    </div>
+</div>
+<div class="mobileLeft leftStyle">
+    <div class="mobileMenu menuStyle">
+        <div class="menushow"></div>
+        <div class="menuclear"></div>
+        <div class="info">
+            <p>帳號：<%= user.username %></p>
+            <p>信箱：<%= user.email %></p>
+        </div>
+        <div class="list">
+            <div class="liTitle">商品管理</div>
+            <a href="/product" class="subList">商品列表</a>
+            <a href="/product/add" class="subList">新增商品</a>
+        </div>
+        <div class="list">
+            <div class="liTitle">用戶管理</div>
+            <a href="" class="subList">用戶列表</a>
+            <a href="" class="subList">新增用戶</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    let menushow = document.querySelector(".menushow");
+    let menuclear = document.querySelector(".menuclear");
+    let mobileLeft = document.querySelector(".mobileLeft");
+
+    menushow.addEventListener("click", (e) => {
+        mobileLeft.style = "left: 0px";
+        menushow.style = "display: none";
+        menuclear.style = "display: block";
+    });
+
+    menuclear.addEventListener("click", (e) => {
+        mobileLeft.style = "left: -250px";
+        menushow.style = "display: block";
+        menuclear.style = "display: none";
+    });
+</script>

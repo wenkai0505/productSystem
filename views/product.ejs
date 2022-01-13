@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Product</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <%- include ('./components/header.ejs') %>
+        <div class="product">
+            <%- include ('./components/left.ejs') %>
+            <div class="right">
+                <div class="content">
+                    <div class="productList">
+                        <div class="formTitle rowType">
+                            <div class="td1 tdType">日期</div>
+                            <div class="td2 tdType">圖標</div>
+                            <div class="td3 tdType">標題</div>
+                            <div class="td4 tdType">介紹</div>
+                            <div class="td5 tdType">價格</div>
+                            <div class="td6 tdType">操作</div>
+                        </div>
+
+                        <% data.forEach(item => { %>
+
+                        <div class="formRow rowType">
+                            <div class="date td1 tdType"><%= item.month %>/<%= item.data %></div>
+                            <div class="pic td2 tdType">
+                                <img src="<%= item.pic %>" alt="" />
+                            </div>
+                            <div class="title td3 tdType"><%= item.title %></div>
+                            <div class="introduc td4 tdType"><%= item.introduc %></div>
+                            <div class="price td5 tdType"><%= item.price %></div>
+                            <div class="control td6 tdType">
+                                <a href="/product/edit/<%= item._id %>" class="btn edit">編輯</a>
+                                <a href="/product/delete/<%= item._id %>" class="btn delete">刪除</a>
+                            </div>
+                        </div>
+                        <%}); %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

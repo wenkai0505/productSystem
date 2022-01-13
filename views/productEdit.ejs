@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ProductEdit</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <%- include ('./components/header.ejs') %>
+        <div class="product">
+            <%- include ('./components/left.ejs') %>
+            <div class="right">
+                <div class="content">
+                    <form action="/product/edit/<%= data._id %>" class="porductAdd" method="POST">
+                        <div class="inputRow">
+                            <label class="inputTitle">商品標題</label>
+                            <input type="text" name="title" value="<%= data.title  %> " />
+                        </div>
+                        <div class="inputRow">
+                            <label class="inputTitle">商品介紹</label>
+                            <input type="text" name="introduc" value="<%= data.introduc  %>" />
+                        </div>
+                        <div class="inputRow">
+                            <label class="inputTitle">商品價格</label>
+                            <input type="text" name="price" value="<%= data.price  %>" />
+                        </div>
+                        <div class="imgbox">
+                            <img src="<%= data.pic  %>" alt="" />
+                        </div>
+                        <!-- <div class="inputRow">
+                            <input type="file" name="pic" />
+                        </div> -->
+                        <button type="submit" class="btnadd">確定修改</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

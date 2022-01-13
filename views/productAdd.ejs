@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ProductAdd</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <%- include ('./components/header.ejs') %>
+        <div class="product">
+            <%- include ('./components/left.ejs') %>
+            <div class="right">
+                <div class="content">
+                    <form action="/product/add" class="porductAdd" method="POST" enctype="multipart/form-data">
+                        <div class="inputRow">
+                            <label class="inputTitle">商品標題</label>
+                            <input type="text" name="title" />
+                        </div>
+                        <div class="inputRow">
+                            <label class="inputTitle">商品介紹</label>
+                            <input type="text" name="introduc" />
+                        </div>
+                        <div class="inputRow">
+                            <label class="inputTitle">商品價格</label>
+                            <input type="text" name="price" />
+                        </div>
+                        <div class="inputRow">
+                            <input type="file" name="pic" />
+                        </div>
+                        <button type="submit" class="btnadd">新增商品</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

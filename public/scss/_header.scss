@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    background: #656563;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .ststemLogo {
+        width: 20rem;
+        height: 3rem;
+        background: url("../images/systsemLogo.png") no-repeat center;
+        background-size: cover;
+    }
+    .logout {
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .logoutIcon {
+                width: 20px;
+                height: 20px;
+                background: url("../images//logout.png") no-repeat center;
+                background-size: 90%;
+                margin-right: 10px;
+            }
+            p {
+                color: #fff;
+            }
+        }
+    }
+}
